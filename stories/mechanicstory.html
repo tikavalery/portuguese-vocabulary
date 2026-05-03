@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./stories.css">
+<style>
+ 
+
+</style>
+
+</head>
+<body>
+<header class="navbar">
+  <h1>Brazilian Portuguese Courses</h1>
+  <nav class="nav-links">
+    <a href="../home.html">Home</a>
+    <a href="../home.html">Conjugation</a>
+    <a href="../home.html">Adjectives</a>
+    <a href="../home.html">Adverbs</a>
+    <a href="../home.html">Grammar</a>
+    <a href="../home.html">Articles</a>
+    <a href="../home.html">Verbs</a>
+    <a href="../home.html">Questions</a>
+    <a href="../home.html">Negation</a>
+  </nav>
+</header>
+
+  <div class="container">
+    <!-- Sidebar Left -->
+    <aside class="sidebar">
+      <h2>Word List</h2>
+      <ul id="wordList"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h1>Vocabulary</h1>
+
+   
+
+      <div id="wordDisplay">▶ </div>
+      <div class="instruction">Click the box to begin audio playback</div>
+
+      <div id="controls" style="display:none;" class="controls">
+        <button id="prevBtn">Previous</button>
+        <button id="pauseResumeBtn">Pause</button>
+        <button id="stopBtn">Stop</button>
+        <button id="nextBtn">Next</button>
+      </div>
+
+    
+       <div class="pagination">
+        <a class="letter active" href="./vocabulary.html">A</a>
+        <a class="letter" href="./vocabularyB.html">B</a>
+        <a class="letter" href="./vocabularyC.html">C</a>
+        <a class="letter" href="./vocabularyD.html">D</a>
+        <a class="letter" href="./vocabularyE.html">E</a>
+        <a class="letter" href="./vocabularyF.html">F</a>
+        <a class="letter" href="./vocabularyG.html">G</a>
+        <a class="letter" href="./vocabularyH.html">H</a>
+        <a class="letter" href="./vocabularyI.html">I</a>
+        <a class="letter" href="./vocabularyJ.html">J</a>
+        <a class="letter" href="./vocabularyK.html">K</a>
+        <a class="letter" href="./vocabularyK.html">L</a>
+        <a class="letter" href="./vocabularyM.html">M</a>
+        <a class="letter" href="./vocabularyN.html">N</a>
+        <a class="letter" href="./vocabularyO.html">O</a>
+        <a class="letter" href="./vocabularyP.html">P</a>
+        <a class="letter" href="./vocabularyQ.html">Q</a>
+        <a class="letter" href="./vocabularyR.html">R</a>
+        <a class="letter" href="./vocabularyS.html">S</a>
+        <a class="letter" href="./vocabularyT.html">T</a>
+        <a class="letter" href="./vocabularyV.html">U</a>
+        <a class="letter" href="./vocabularyV.html">V</a>
+        <a class="letter" href="./vocabularyW.html">W</a>
+        <a class="letter" href="./vocabularyX.html">X</a>
+        <a class="letter" href="./vocabularyY.html">Y</a>
+        <a class="letter" href="./vocabularyZ.html">Z</a>
+      </div>
+    </main>
+
+    <!-- Sidebar Right -->
+    <aside class="sidebar">
+      <h2> Downloads </h2>
+         <p>
+        Download PDF of A Vocabulary
+        <span><a href="./vocabularycart/vocabularyCartA.html">here</a></span>
+      </p>
+      <p>
+        Download Fill in the blank exercises
+        <span><a href="./vocabularycart/vocabularyCartA.html">here</a></span>
+      </p> 
+    </aside>
+  </div>
+
+
+ 
+
+
+
+  <script>
+const words = [
+  ["Thomas loved driving through the countryside in his old convertible.","Thomas adorava dirigir pelo campo em seu velho conversível."],
+  ["Every Sunday, he took the same winding road that led to the lake.","Todos os domingos ele pegava a mesma estrada sinuosa que levava ao lago."],
+  ["His car, a red 1972 Alfa Romeo Spider, had been in his family for generations.","Seu carro, um Alfa Romeo Spider vermelho 1972, estava em sua família há gerações."],
+  ["Although it sometimes broke down, he never thought of replacing it.","Embora às vezes quebrasse, ele nunca pensou em substituí-lo."],
+  ["One morning, the engine wouldn’t start, and Thomas had to call a mechanic.","Certa manhã, o motor não pegou e Thomas teve que chamar um mecânico."],
+  ["The mechanic arrived quickly and inspected the car with curiosity.","O mecânico chegou rapidamente e inspecionou o carro com curiosidade."],
+  ["“This model is a classic,” he said, smiling as he wiped his hands.","“Este modelo é um clássico”, disse ele, sorrindo enquanto enxugava as mãos."],
+  ["After a few adjustments, the car roared back to life.","Depois de alguns ajustes, o carro rugiu novamente."],
+  ["Thomas thanked him and promised to take better care of the engine.","Thomas agradeceu e prometeu cuidar melhor do motor."],
+  ["From that day on, he kept a small notebook to track every repair and change.","Daquele dia em diante, ele manteve um pequeno caderno para registrar cada reparo e alteração."],
+  ["The car continued to run for many more years, carrying with it memories and stories.","O carro continuou a funcionar por muitos mais anos, carregando consigo memórias e histórias."],
+  ["countryside","campo"],
+  ["convertible","conversível"],
+  ["Sunday","Domingo"],
+  ["road","caminho"],
+  ["lake","lago"],
+  ["car","carro"],
+  ["engine","motor"],
+  ["to drive","dirigir"],
+  ["winding","sinuoso"],
+  ["family","família"],
+  ["generations","gerações"],
+  ["to break down","quebrar"],
+  ["to replace","substituir"],
+  ["mechanic","mecânico"],
+  ["to inspect","inspecionar"],
+  ["classic","clássico"],
+  ["to wipe","enxugar"],
+  ["adjustments","ajustes"],
+  ["to roar","rugir"],
+  ["to thank","agradecer"],
+  ["to promise","prometer"],
+  ["to take care of","cuidar de"],
+  ["notebook","caderno"],
+  ["repair","reparo"],
+  ["change","mudar"],
+  ["to continue","continuar"],
+  ["memories","memórias"],
+  ["stories","histórias"]
+];
+
+
+    const display = document.getElementById('wordDisplay');
+    const controls = document.getElementById('controls');
+    const prevBtn = document.getElementById('prevBtn');
+    const pauseResumeBtn = document.getElementById('pauseResumeBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const wordList = document.getElementById('wordList');
+
+    let index = 0;
+    let started = false;
+    let stopRequested = false;
+    let skipRequested = false;
+    let pauseRequested = false;
+    let jumpToIndex = false;
+
+    // Populate sidebar list
+    words.forEach(([en, pt], i) => {
+      const li = document.createElement('li');
+      li.textContent = `${en} - ${pt}`;
+      li.dataset.idx = i;
+      li.addEventListener('click', () => {
+        index = i;
+        if (started) {
+          jumpToIndex = true;
+          speechSynthesis.cancel();
+        } else {
+          updateDisplayAndHighlight();
+        }
+      });
+      wordList.appendChild(li);
+    });
+
+    function updateDisplayAndHighlight() {
+      const [en, pt] = words[index];
+      display.textContent = `${en} - ${pt}`;
+
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+      const activeLi = wordList.querySelector(`li[data-idx="${index}"]`);
+      if (activeLi) {
+        activeLi.classList.add('active');
+        activeLi.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function speakWord(text, lang) {
+      return new Promise(resolve => {
+        if (stopRequested || skipRequested || jumpToIndex) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.onend = () => resolve();
+        utterance.onerror = () => resolve();
+        speechSynthesis.speak(utterance);
+      });
+    }
+
+    async function waitWithPause(ms) {
+      const interval = 100;
+      let waited = 0;
+      while (waited < ms) {
+        if (stopRequested || skipRequested || jumpToIndex) break;
+        if (!pauseRequested) {
+          waited += interval;
+        }
+        await new Promise(r => setTimeout(r, interval));
+      }
+    }
+
+    async function playLoop() {
+      while (!stopRequested) {
+        if (pauseRequested) {
+          await new Promise(r => setTimeout(r, 200));
+          continue;
+        }
+
+        
+
+        updateDisplayAndHighlight();
+        const [english, portuguese] = words[index];
+
+        await speakWord(english, 'en-US');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        await speakWord(portuguese, 'pt-BR');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        index = (index + 1) % words.length;
+        await waitWithPause(1000);
+      }
+
+      stopRequested = false;
+      pauseRequested = false;
+      skipRequested = false;
+      jumpToIndex = false;
+      started = false;
+      speechSynthesis.cancel();
+      display.textContent = "▶ Click to Start";
+      controls.style.display = "none";
+      pauseResumeBtn.textContent = "Pause";
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+    }
+
+    display.addEventListener('click', () => {
+      if (!started) {
+        started = true;
+        stopRequested = false;
+        skipRequested = false;
+        pauseRequested = false;
+        index = 0;
+        display.textContent = "Loading...";
+        controls.style.display = "flex";
+        pauseResumeBtn.textContent = "Pause";
+        setTimeout(() => {
+          playLoop();
+        }, 500);
+      }
+    });
+
+    stopBtn.addEventListener('click', () => {
+      stopRequested = true;
+      speechSynthesis.cancel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        speechSynthesis.cancel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        index = (index - 1 + words.length) % words.length;
+        speechSynthesis.cancel();
+      }
+    });
+
+    pauseResumeBtn.addEventListener('click', () => {
+      if (!started) return;
+      if (!pauseRequested) {
+        pauseRequested = true;
+        speechSynthesis.pause();
+        pauseResumeBtn.textContent = "Resume";
+      } else {
+        pauseRequested = false;
+        speechSynthesis.resume();
+        pauseResumeBtn.textContent = "Pause";
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- const words = [
+  ["a", "un / una"],
+  ["ability", "habilidad"],
+  ["able", "capaz"],
+  ["to attend", "asistir"],
+  ["to attract", "atraer"],
+  ["to avoid", "evitar"]
+]; -->

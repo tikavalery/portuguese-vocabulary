@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brazilian Portuguese Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    /* 🔝 Top Navigation Bar */
+    .navbar {
+      background-color: #2c3e50;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      background-color: #34495e;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #1abc9c;
+    }
+
+    /* 🧭 Layout container */
+    .layout {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* 📚 Sidebar */
+    .sidebar {
+      background-color: #2c3e50;
+      color: white;
+      width: 250px;
+      padding: 20px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar li {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background-color: #34495e;
+      cursor: pointer;
+    }
+
+    .sidebar li:hover,
+    .sidebar li.active {
+      background-color: #1abc9c;
+      font-weight: bold;
+    }
+
+    /* 📄 Main Content */
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .pagination {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .letter {
+      padding: 10px 16px;
+      background-color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #34495e;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .letter:hover,
+    .letter.active {
+      background-color: #dbefff;
+      color: #2c3e50;
+    }
+
+    /* 🔄 Responsive Design */
+    @media screen and (max-width: 1024px) {
+      .navbar h1 {
+        font-size: 1.4rem;
+      }
+
+      .nav-links a {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .sidebar h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .sidebar ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .sidebar li {
+        font-size: 0.9rem;
+      }
+
+      .main {
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 Top Navigation -->
+  <div class="navbar">
+    <h1>Brazilian Portuguese Courses</h1>
+    <div class="nav-links">
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="conjugation.html">Conjugation</a>
+      <a href="adjectives.html">Adjectives</a>
+      <a href="adverbs.html">Adverbs</a>
+      <a href="grammar.html">Grammar</a>
+      <a href="articles.html">Articles</a>
+      <a href="verbs.html">Verbs</a>
+      <a href="questions.html">Questions</a>
+      <a href="negation.html">Negation</a>
+    </div>
+  </div>
+
+  <!-- 📚 Sidebar + Main Layout -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Letters</h2>
+      <ul>
+        <li class="active">A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+        <!-- More letters -->
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <h2>Vocabulary - A</h2>
+      <div class="pagination">
+        <a href="#" class="letter active">A</a>
+        <a href="#" class="letter">B</a>
+        <a href="#" class="letter">C</a>
+        <a href="#" class="letter">D</a>
+        <a href="#" class="letter">E</a>
+        <a href="#" class="letter">F</a>
+        <a href="#" class="letter">G</a>
+        <!-- Continue to Z -->
+      </div>
+
+      <!-- Example word content here -->
+      <p style="margin-top: 20px;">Example vocabulary list for A goes here...</p>
+    </div>
+  </div>
+
+</body>
+</html>

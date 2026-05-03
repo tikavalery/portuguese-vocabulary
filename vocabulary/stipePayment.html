@@ -1,0 +1,25 @@
+<body>
+  <h1>Vocabulary PDF Generator</h1>
+  <form id="paymentForm">
+    <label for="email">Enter your email to receive the full PDF:</label>
+    <input type="email" id="email" name="email" required />
+    <button type="submit">Buy Complete PDF</button>
+  </form>
+
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+     
+      // Save email on your server before redirecting to Stripe
+      await fetch('/create-session', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ email })
+      });
+
+      // Redirect user to Stripe payment page
+      window.location.href = "https://buy.stripe.com/aFaeVefCm4R62ng4sj7ss00"; // your real Stripe link
+    });
+  </script>
+</body>

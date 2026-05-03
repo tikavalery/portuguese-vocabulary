@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./vocabulary.css">
+<style>
+ 
+
+</style>
+<script src="./wordList.js"></script>
+</head>
+<body>
+  <div class="container-main">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                          <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Vocabulary Center</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                              <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="../home.html">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown">
+                                    Courses
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="../home.html">Conjugation</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Adjectives</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Adverbs</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Grammar</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Articles</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Verbs</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Questions</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Negation</a></li>
+                                  </ul>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="./vocabularycart/vocabularyCartA.html">Downloads</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                </nav>
+    <!-- Sidebar Left -->
+             
+                
+    <!-- Main Content -->
+                <main class="main">  
+                  <div class="first-flex"> 
+                     <aside class="sidebar">
+                  <!-- <h2>Word List</h2> -->
+                   <ul id="wordList" class="list-group sidebar"></ul>
+                  </aside> 
+                </div>
+                  <div class="main-center">
+                    <div id="controls" style="display:none;" class="controls">
+                            <button id="prevBtn">Previous</button>
+                            <button id="pauseResumeBtn">Pause</button>
+                            <button id="stopBtn">Stop</button>
+                            <button id="nextBtn">Next</button>
+                          </div> 
+                          <div id="wordDisplay">▶ Play </div>
+
+
+                    
+
+                           <div class="pagination">
+                                  <a class="letter active" href="?list=A">A</a>
+                                  <a class="letter" href="?list=B">B</a>
+                            <a class="letter" href="?list=C">C</a>
+                              <a class="letter" href="?list=D">D</a>
+                              <a class="letter" href="?list=E">E</a>
+                              <a class="letter" href="?list=F">F</a>
+                              <a class="letter" href="?list=G">G</a>
+                              <a class="letter" href="?list=H">H</a>
+                              <a class="letter" href="?list=I">I</a>
+                              <a class="letter" href="?list=J">J</a>
+                              <a class="letter" href="?list=K">K</a>
+                              <a class="letter" href="?list=L">L</a>
+                              <a class="letter" href="?list=M">M</a>
+                              <a class="letter" href="?list=N">N</a>
+                              <a class="letter" href="?list=O">O</a>
+                              <a class="letter" href="?list=P">P</a>
+                              <a class="letter" href="?list=Q">Q</a>
+                              <a class="letter" href="?list=R">R</a>
+                              <a class="letter" href="?list=S">S</a>
+                              <a class="letter" href="?list=T">T</a>
+                              <a class="letter" href="?list=U">U</a>
+                              <a class="letter" href="?list=V">V</a>
+                              <a class="letter" href="?list=W">W</a>
+                              <a class="letter" href="?list=X">X</a>
+                              <a class="letter" href="?list=Y">Y</a>
+                              <a class="letter" href="?list=Z">Z</a>
+
+                          </div> 
+                  </div>
+                  <div class="second-flex"> 
+                           <!-- Sidebar Right -->
+                          <aside class="sidebar-end">
+                              <h2> Vocabulary center</h2>
+                              <p>  </p>
+                        
+                            </aside> 
+                  </div>
+               
+                            
+                        </main>
+
+
+  </div>
+
+
+ 
+
+
+
+  <script>
+
+
+
+
+    const params = new URLSearchParams(window.location.search);
+    const list = params.get("list")?.toUpperCase();
+    let words = [];
+switch (list) {
+  case "A":
+    words = listA;
+    break;
+  case "B":
+    words = listB;
+    break;
+  case "C":
+    words = listC;
+    break;
+  case "D":
+    words = listD;
+    break;
+  case "E":
+    words = listE;
+    break;
+  case "F":
+    words = listF;
+    break;
+  case "G":
+    words = listG;
+    break;
+  case "H":
+    words = listH;
+    break;
+  case "I":
+    words = listI;
+    break;
+  case "J":
+    words = listJ;
+    break;
+  case "K":
+    words = listK;
+    break;
+  case "L":
+    words = listL;
+    break;
+  case "M":
+    words = listM;
+    break;
+  case "N":
+    words = listN;
+    break;
+  case "O":
+    words = listO;
+    break;
+  case "P":
+    words = listP;
+    break;
+  case "Q":
+    words = listQ;
+    break;
+  case "R":
+    words = listR;
+    break;
+  case "S":
+    words = listS;
+    break;
+  case "T":
+    words = listT;
+    break;
+  case "U":
+    words = listU;
+    break;
+  case "V":
+    words = listV;
+    break;
+  case "W":
+    words = listW;
+    break;
+  case "X":
+    words = listX;
+    break;
+  case "Y":
+    words = listY;
+    break;
+  case "Z":
+    words = listZ;
+    break;
+  default:
+    words = [];
+    document.getElementById("wordDisplay").textContent = "Please select a list from below.";
+}
+
+    const display = document.getElementById('wordDisplay');
+    const controls = document.getElementById('controls');
+    const prevBtn = document.getElementById('prevBtn');
+    const pauseResumeBtn = document.getElementById('pauseResumeBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const wordList = document.getElementById('wordList');
+
+    let index = 0;
+    let started = false;
+    let stopRequested = false;
+    let skipRequested = false;
+    let pauseRequested = false;
+    let jumpToIndex = false;
+
+    // Populate sidebar list
+    words.forEach(([en, pt], i) => {
+      const li = document.createElement('li');
+          li.classList.add('list-group-item');
+      li.textContent = `${en} - ${pt}`;
+      li.dataset.idx = i;
+      li.addEventListener('click', () => {
+        index = i;
+        if (started) {
+          jumpToIndex = true;
+          speechSynthesis.cancel();
+        } else {
+          updateDisplayAndHighlight();
+        }
+      });
+      wordList.appendChild(li);
+    });
+
+    function updateDisplayAndHighlight() {
+      const [en, pt] = words[index];
+      display.textContent = `${en} - ${pt}`;
+
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+      const activeLi = wordList.querySelector(`li[data-idx="${index}"]`);
+      if (activeLi) {
+        activeLi.classList.add('active');
+        // Always center the active word in its container
+        activeLi.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center',
+          inline: 'nearest'
+        });
+
+      }
+    }
+
+    function speakWord(text, lang) {
+      return new Promise(resolve => {
+        if (stopRequested || skipRequested || jumpToIndex) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.onend = () => resolve();
+        utterance.onerror = () => resolve();
+        speechSynthesis.speak(utterance);
+      });
+    }
+
+    async function waitWithPause(ms) {
+      const interval = 100;
+      let waited = 0;
+      while (waited < ms) {
+        if (stopRequested || skipRequested || jumpToIndex) break;
+        if (!pauseRequested) {
+          waited += interval;
+        }
+        await new Promise(r => setTimeout(r, interval));
+      }
+    }
+
+    async function playLoop() {
+      while (!stopRequested) {
+        if (pauseRequested) {
+          await new Promise(r => setTimeout(r, 200));
+          continue;
+        }
+
+        
+
+        updateDisplayAndHighlight();
+        const [english, portuguese] = words[index];
+
+        await speakWord(english, 'en-US');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        await speakWord(portuguese, 'pt-BR');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        index = (index + 1) % words.length;
+        await waitWithPause(1000);
+      }
+
+      stopRequested = false;
+      pauseRequested = false;
+      skipRequested = false;
+      jumpToIndex = false;
+      started = false;
+      speechSynthesis.cancel();
+      display.textContent = "▶ Click to Start";
+      controls.style.display = "none";
+      pauseResumeBtn.textContent = "Pause";
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+    }
+
+    display.addEventListener('click', () => {
+      if (!started) {
+        started = true;
+        stopRequested = false;
+        skipRequested = false;
+        pauseRequested = false;
+        index = 0;
+        display.textContent = "Loading...";
+        controls.style.display = "flex";
+        pauseResumeBtn.textContent = "Pause";
+        setTimeout(() => {
+          playLoop();
+        }, 500);
+      }
+    });
+
+    stopBtn.addEventListener('click', () => {
+      stopRequested = true;
+      speechSynthesis.cancel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        speechSynthesis.cancel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        index = (index - 1 + words.length) % words.length;
+        speechSynthesis.cancel();
+      }
+    });
+
+    pauseResumeBtn.addEventListener('click', () => {
+      if (!started) return;
+      if (!pauseRequested) {
+        pauseRequested = true;
+        speechSynthesis.pause();
+        pauseResumeBtn.textContent = "Resume";
+      } else {
+        pauseRequested = false;
+        speechSynthesis.resume();
+        pauseResumeBtn.textContent = "Pause";
+      }
+    });
+
+    // Create the element
+const floatingText = document.createElement('div');
+floatingText.textContent = 'Please LIKE and SUBSCRIBE';
+floatingText.style.position = 'fixed';
+floatingText.style.fontWeight = 'bold';
+floatingText.style.fontSize = '20px';
+floatingText.style.color = '#0066cc';
+floatingText.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 102, 204, 0.3)';
+floatingText.style.zIndex = '9999';
+floatingText.style.transition = 'opacity 3.0s ease';
+floatingText.style.opacity = '0'; // initially hidden
+floatingText.style.pointerEvents = 'none'; // Don't interfere with clicks
+document.body.appendChild(floatingText);
+
+// Function to randomly position and toggle visibility
+function showAlakataRandomly() {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  const randomX = Math.floor(Math.random() * (screenWidth - 100));
+  const randomY = Math.floor(Math.random() * (screenHeight - 30));
+
+  floatingText.style.left = `${randomX}px`;
+  floatingText.style.top = `${randomY}px`;
+
+  // Show the text
+  floatingText.style.opacity = '1';
+
+  // Hide it after 2 seconds
+  setTimeout(() => {
+    floatingText.style.opacity = '0';
+  }, 5000);
+}
+
+// Show every 5 seconds
+setInterval(showAlakataRandomly, 30000);
+
+  </script>
+  <!-- Bootstrap 5 JS + Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

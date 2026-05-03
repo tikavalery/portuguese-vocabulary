@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brazilian Portuguese Learning Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      font-weight: 800;
+      color: #2c3e50;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 16px;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #34495e;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+      background: #eaf6ff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Courses</h1>
+<div class="grid">
+  <a href="./vocabulary/vocabulary.html" class="box">Alphabetical Vocabulary</a>
+ <a href="./stories/mechanicstory.html" class="box">Stories</a>
+  <a href="adjectives.html" class="box">Adjectives Vocabulary</a>
+  <a href="adverbs.html" class="box">Adverbs Vocabulary</a>
+  <a href="grammar.html" class="box">Grammar Vocabulary</a>
+  <a href="articles.html" class="box">Articles Vocabulary</a>
+  <a href="verbs.html" class="box">Verbs Vocabulary</a>
+  <a href="questions.html" class="box">Questions Vocabulary</a>
+  <a href="negation.html" class="box">Negation Vocabulary</a> 
+</div>
+</body>
+</html>

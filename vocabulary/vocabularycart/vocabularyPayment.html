@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Brazilian Portuguese Vocabulary PDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f4f8;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #34495e;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #1abc9c;
+    }
+
+    .checkout-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .left-section {
+      flex: 2;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .product-details h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .product-details p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .price-details {
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    .price-details strong {
+      display: inline-block;
+      width: 120px;
+    }
+
+    .right-section {
+      flex: 1;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .right-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    @media screen and (max-width: 768px) {
+      .checkout-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+    }
+  </style>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Continue Shopping</a>
+    <span>Checkout</span>
+  </div>
+
+  <div class="checkout-container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="pdf-preview.jpg" alt="PDF Preview" class="product-image">
+      <div class="product-details">
+        <h2>Brazilian Portuguese Vocabulary PDF - Letter A</h2>
+        <p>This professionally designed vocabulary list includes 100+ essential words starting with the letter A in both English and Brazilian Portuguese. Perfect for learners of all levels.</p>
+        <div class="price-details">
+          <p><strong>Price:</strong> $5.00</p>
+          <p><strong>Quantity:</strong> 1</p>
+          <p><strong>Version:</strong> PDF Only</p>
+          <hr style="margin: 15px 0;">
+          <p><strong>Subtotal:</strong> $5.00</p>
+          <p><strong>Total:</strong> $5.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h3>Payment Information</h3>
+      <form id="payment-form">
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Name on Card" required>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="MM/YY" required>
+        <input type="text" placeholder="CVC" required>
+        <select required>
+          <option value="">Select Country</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="UK">United Kingdom</option>
+          <!-- Add more countries as needed -->
+        </select>
+        <input type="text" placeholder="ZIP / Postal Code" required>
+        <button type="submit" id="buy">Pay $5.00</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+      document.getElementById("payment-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual submission
+
+    const form = e.target;
+
+    const paymentData = {
+      email: form.email.value,
+      name: form.name.value,
+      cardNumber: form.cardNumber.value,
+      expiry: form.expiry.value,
+      cvc: form.cvc.value,
+      country: form.country.value,
+      zip: form.zip.value
+    };
+
+    console.log("Payment Info:", paymentData);
+  });
+  const stripe = Stripe("pk_live_51NovQALXB4fdf1TyC0XQwANcDD3pVM65ARTgsNaT40hIjbnqmpymvukSwI5dY3vSuqHxhtdFA4c7U57W8VTmHW5900kbDaI45S");
+  document.getElementById("buy").addEventListener("click", async () => {
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "customer@example.com" }),
+    });
+    const session = await response.json();
+    stripe.redirectToCheckout({ sessionId: session.id });
+  });
+</script>
+</body>
+</html>

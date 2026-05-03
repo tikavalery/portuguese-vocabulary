@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary PDF Generator</title>
+  <script src="./wordList.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <h1>Vocabulary PDF Generator</h1>
+  <p>Click on a letter to download that list, or download all below:</p>
+  <div id="letterLinks"></div>
+  <br>
+  <button id="downloadAllBtn">Download All Words as PDF</button>
+<a href="https://buy.stripe.com/ahishihruueueu">Buy Complete PDF</a>
+  <script>
+    // Wait until all scripts are loaded
+    window.addEventListener('DOMContentLoaded', () => {
+      const { jsPDF } = window.jspdf;
+ const allLists = {
+  A: listA,
+  B: listB,
+  C: listC,
+  D: listD,
+  E: listE,
+  F: listF,
+  G: listG,
+  H: listH,
+  I: listI,
+  J: listJ,
+  K: listK,
+  L: listL,
+  M: listM,
+  N: listN,
+  O: listO,
+  P: listP,
+  Q: listQ,
+  R: listR,
+  S: listS,
+  T: listT,
+  U: listU,
+  V: listV,
+  W: listW,
+  X: listX,
+  Y: listY,
+  Z: listZ
+};
+
+
+      const letterLinks = document.getElementById('letterLinks');
+      for (const letter in allLists) {
+        const link = document.createElement('a');
+        link.href = "#";
+        link.textContent = letter;
+        link.style.marginRight = "10px";
+        link.addEventListener('click', () => generatePDF(letter, allLists[letter]));
+        letterLinks.appendChild(link);
+      }
+
+      document.getElementById('downloadAllBtn').addEventListener('click', () => {
+        const allWords = Object.values(allLists).flat();
+        generatePDF("All_Words", allWords);
+      });
+
+      function generatePDF(title, wordArray) {
+        const doc = new jsPDF();
+        doc.setFontSize(16);
+        doc.text("English - Brazilian Portuguese Vocabulary: " + title, 14, 20);
+        doc.autoTable({
+          head: [['English', 'Portuguese (Brazil)']],
+          body: wordArray,
+          startY: 30,
+          styles: { halign: 'left' },
+        });
+        doc.save(`vocabulary_${title}.pdf`);
+      }
+    });
+  </script>
+</body>
+</html>

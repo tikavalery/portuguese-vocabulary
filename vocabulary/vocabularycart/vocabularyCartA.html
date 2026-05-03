@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Vocabulary PDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background-color: #2c3e50;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a,
+    .cta-button {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #1abc9c;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .cta-button:hover {
+      background-color: #16a085;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .sidebar-cta {
+      background-color: #34495e;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 300px;
+      margin-left: auto;
+    }
+
+    .sidebar-cta h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .sidebar-cta .cta-button {
+      background-color: #1abc9c;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .sidebar-cta {
+        margin: 20px auto 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Brazilian Portuguese Mastery</h1>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Vocabulary</a>
+      <a href="#">Contact</a>
+      <a href="./vocabularyPayment.html" class="cta-button">Buy PDF</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master Brazilian Portuguese Vocabulary by Alphabet</h1>
+      <p>
+        Unlock our beautifully designed, downloadable PDF guides for each letter of the alphabet. Whether you're a beginner or intermediate learner, these PDF packs are packed with essential words, helpful translations (English and Brazilian Portuguese), and space to practice. Learn faster with focused lists and printable resources.
+      </p>
+      <a href="./vocabularyPayment.html" class="cta-button">Buy A PDF Only</a>
+       <a href="./vocabularyPayment.html" class="cta-button">Buy A PDF and Fill in the black exercises </a>
+    </div>
+    <div class="hero-image">
+      <!-- <img src="./AImage.png" alt="Vocabulary PDF Preview"> -->
+    </div>
+    <div class="sidebar-cta">
+      <h2>Get Your PDFs Now</h2>
+      <p>Each pack includes vocabulary lists, English translations, and exercises.</p>
+            <a href="./vocabularyPayment.html" class="cta-button">Buy A PDF Only</a>
+       <a href="./vocabularyPayment.html" class="cta-button">Buy A PDF and Fill in the black exercises </a>
+    </div>
+  </section>
+</body>
+</html>

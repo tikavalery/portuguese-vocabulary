@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary Practice Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background: #f8f8f8;
+    }
+    h1 {
+      color: #333;
+    }
+    a {
+      display: inline-block;
+      margin: 1em 0;
+      padding: 0.6em 1.2em;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Download Vocabulary Practice PDFs</h1>
+  <a href="#" id="englishBtn">Download English Practice PDF</a><br>
+  <a href="#" id="portugueseBtn">Download Brazilian Portuguese Practice PDF</a>
+
+  <!-- jsPDF and AutoTable plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <script>
+    // 1. English–Brazilian Portuguese word pairs (sample)
+    const words = [
+      ["ability", "habilidade"],
+      ["able", "capaz"],
+      ["accident", "acidente"],
+      ["absence", "ausência"],
+      ["air", "ar"],
+      ["airport", "aeroporto"],
+      ["all", "todos"],
+      ["almost", "quase"],
+      ["analysis", "análise"],
+      ["animal", "animal"]
+    ];
+
+    // Helper: return a row with a word + blank cells for practice
+    function createPracticeRows(sideIndex, practiceSpaces = 3) {
+      return words.map(pair => {
+        const row = [pair[sideIndex]];
+        for (let i = 0; i < practiceSpaces; i++) {
+          row.push("____________________");
+        }
+        return row;
+      });
+    }
+
+    // English practice PDF
+    document.getElementById("englishBtn").addEventListener("click", () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFontSize(16);
+      doc.text("English Vocabulary Practice", 14, 20);
+
+      const headers = ["English", "Practice 1", "Practice 2", "Practice 3"];
+      const data = createPracticeRows(0, 3);
+
+      doc.autoTable({
+        head: [headers],
+        body: data,
+        startY: 30,
+        styles: { halign: 'left' },
+      });
+
+      doc.save("english_practice.pdf");
+    });
+
+    // Brazilian Portuguese practice PDF
+    document.getElementById("portugueseBtn").addEventListener("click", () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFontSize(16);
+      doc.text("Brazilian Portuguese Vocabulary Practice", 14, 20);
+
+      const headers = ["Português (Brasil)", "Prática 1", "Prática 2", "Prática 3"];
+      const data = createPracticeRows(1, 3);
+
+      doc.autoTable({
+        head: [headers],
+        body: data,
+        startY: 30,
+        styles: { halign: 'left' },
+      });
+
+      doc.save("brazilian_portuguese_practice.pdf");
+    });
+  </script>
+</body>
+</html>

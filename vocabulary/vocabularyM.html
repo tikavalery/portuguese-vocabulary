@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./vocabulary.css">
+<style>
+ 
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                          <div class="container-fluid">
+                            <a class="navbar-brand" href="#">ALAKATA</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                              <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="../home.html">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown">
+                                    Courses
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="../home.html">Conjugation</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Adjectives</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Adverbs</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Grammar</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Articles</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Verbs</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Questions</a></li>
+                                    <li><a class="dropdown-item" href="../home.html">Negation</a></li>
+                                  </ul>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="./vocabularycart/vocabularyCartA.html">Downloads</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                </nav>
+    <!-- Sidebar Left -->
+                <aside class="sidebar">
+                  <!-- <h2>Word List</h2> -->
+                  <ul id="wordList" class="list-group sidebar"></ul>
+                </aside>
+                
+    <!-- Main Content -->
+                <main class="main">
+                                             <div id="controls" style="display:none;" class="controls">
+                            <button id="prevBtn">Previous</button>
+                            <button id="pauseResumeBtn">Pause</button>
+                            <button id="stopBtn">Stop</button>
+                            <button id="nextBtn">Next</button>
+                          </div> 
+                          <div id="wordDisplay">▶ Play </div>
+
+                           <div class="pagination">
+                            <a class="letter active" href="./vocabulary.html">A</a>
+                            <a class="letter" href="./vocabularyB.html">B</a>
+                            <a class="letter" href="./vocabularyC.html">C</a>
+                            <a class="letter" href="./vocabularyD.html">D</a>
+                            <a class="letter" href="./vocabularyE.html">E</a>
+                            <a class="letter" href="./vocabularyF.html">F</a>
+                            <a class="letter" href="./vocabularyG.html">G</a>
+                            <a class="letter" href="./vocabularyH.html">H</a>
+                            <a class="letter" href="./vocabularyI.html">I</a>
+                            <a class="letter" href="./vocabularyJ.html">J</a>
+                            <a class="letter" href="./vocabularyK.html">K</a>
+                            <a class="letter" href="./vocabularyK.html">L</a>
+                            <a class="letter" href="./vocabularyM.html">M</a>
+                            <a class="letter" href="./vocabularyN.html">N</a>
+                            <a class="letter" href="./vocabularyO.html">O</a>
+                            <a class="letter" href="./vocabularyP.html">P</a>
+                            <a class="letter" href="./vocabularyQ.html">Q</a>
+                            <a class="letter" href="./vocabularyR.html">R</a>
+                            <a class="letter" href="./vocabularyS.html">S</a>
+                            <a class="letter" href="./vocabularyT.html">T</a>
+                            <a class="letter" href="./vocabularyV.html">U</a>
+                            <a class="letter" href="./vocabularyV.html">V</a>
+                            <a class="letter" href="./vocabularyW.html">W</a>
+                            <a class="letter" href="./vocabularyX.html">X</a>
+                            <a class="letter" href="./vocabularyY.html">Y</a>
+                            <a class="letter" href="./vocabularyZ.html">Z</a>
+                          </div> 
+                        </main>
+
+    <!-- Sidebar Right -->
+    <aside class="sidebar">
+      <h2> Downloads </h2>
+         <p>
+        Download PDF of A Vocabulary
+        <span><a href="./vocabularycart/vocabularyCartA.html">here</a></span>
+      </p>
+      <p>
+        Download Fill in the blank exercises
+        <span><a href="./vocabularycart/vocabularyCartA.html">here</a></span>
+      </p> 
+    </aside>
+  </div>
+
+
+ 
+
+
+
+  <script>
+
+const words = [
+  ["Machine", "Máquina"],
+  ["Magic", "Magia"],
+  ["Magnet", "Imán"],
+  ["Mail", "Correo"],
+  ["Main", "Principal"],
+  ["Make", "Hacer"],
+  ["Man", "Hombre"],
+  ["Map", "Mapa"],
+  ["Market", "Mercado"],
+  ["Mask", "Máscara"],
+  ["Master", "Maestro"],
+  ["Match", "Partida"],
+  ["Matter", "MateriaMachine"],
+  ["Matter", "Materia"],
+  ["Meaning", "Significado"],
+  ["Meal", "Comida"],
+  ["Measure", "Medir"],
+  ["Media", "Medios"],
+  ["Medicine", "Medicina"],
+  ["Melon", "Melón"],
+  ["Member", "Miembro"],
+  ["Memory", "Memoria"],
+  ["Men", "Hombres"],
+  ["Mention", "Mencionar"],
+  ["Message", "Mensaje"],
+  ["Metal", "Metal"],
+  ["Method", "Método"],
+  ["Middle", "Medio"],
+  ["Mind", "Mente"],
+  ["Minute", "Minuto"],
+  ["Miss", "Perder"],
+  ["Mistake", "Error"],
+  ["Mix", "Mezclar"],
+  ["Model", "Modelo"],
+  ["Moment", "Momento"],
+  ["Money", "Dinero"],
+  ["Month", "Mes"],
+  ["Mood", "Estado de ánimo"],
+  ["Moral", "Moral"],
+  ["More", "Más"],
+  ["Most", "La mayoría"],
+  ["Mountain", "Montaña"],
+  ["Mouse", "Ratón"],
+  ["Mouth", "Boca"],
+  ["Move", "Mover"],
+  ["Music", "Música"],
+  ["Must", "Debe"],
+  ["Myth", "Mito"],
+  ["Mallet", "Mazo"],
+  ["Mall", "Centro comercial"],
+  ["Material", "Material"],
+  ["Mature", "Maduro"],
+  ["Medal", "Medalla"],
+  ["Meaningful", "Significativo"],
+  ["Measure", "Medida"],
+  ["Melodic", "Melódico"],
+  ["Mixed", "Mezclado"],
+  ["Modern", "Moderno"],
+  ["Momentum", "Momento"],
+  ["Monopoly", "Monopolio"],
+  ["Morality", "Moralidad"],
+  ["Motivation", "Motivación"],
+  ["Motor", "Motor"],
+  ["Mountainous", "Montañoso"],
+  ["Municipal", "Municipal"],
+  ["Multicultural", "Multicultural"],
+  ["Musical", "Musical"],
+  ["Misery", "Miseria"],
+  ["Masterpiece", "Obra maestra"],
+  ["Magnificent", "Magnífico"],
+  ["Magnitude", "Magnitud"],
+  ["Manual", "Manual"],
+  ["Mark", "Marca"],
+  ["Marsh", "Pantano"],
+  ["Messy", "Desordenado"],
+  ["Mist", "Niebla"],
+  ["Mobility", "Movilidad"],
+  ["Momentary", "Momentáneo"],
+  ["Monkey", "Mono"],
+  ["Moralize", "Moralizar"],
+  ["Morpheme", "Morfema"],
+  ["Mourning", "Duelo"],
+  ["Muffin", "Magdalena"],
+  ["Multitude", "Multitud"],
+  ["Museum", "Museo"],
+  ["Mythology", "Mitología"],
+  ["Mythical", "Mítico"],
+  ["Mysterious", "Misterioso"],
+  ["Manipulate", "Manipular"],
+  ["Minimize", "Minimizar"],
+  ["Migrate", "Migrar"],
+  ["Mediocre", "Mediocre"],
+  ["Motorbike", "Motocicleta"],
+  ["Mobile", "Móvil"],
+  ["Mourn", "Llorar"],
+  ["Myriad", "Miríada"],
+  ["Martial", "Marcial"],
+  ["Memoir", "Memoria"],
+  ["Mythos", "Mito"],
+  ["Magnify", "Aumentar"],
+  ["Mimic", "Imitar"],
+  ["Misunderstand", "Malentender"],
+  ["Multiply", "Multiplicar"],
+  ["Merit", "Mérito"],
+  ["Magnanimous", "Magnánimo"],
+  ["Monologue", "Monólogo"],
+  ["Malicious", "Malicioso"],
+  ["Meditate", "Meditar"],
+  ["Merge", "Fusionar"],
+  ["Morbid", "Morboso"],
+  ["Metaphor", "Metáfora"],
+  ["Malfunction", "Mal funcionamiento"],
+  ["Mediator", "Mediador"],
+  ["Merchandise", "Mercancía"],
+  ["Magnifier", "Lupa"],
+  ["Milestone", "Hito"],
+  ["Mentality", "Mentalidad"],
+  ["Mortality", "Mortalidad"],
+  ["Minutiae", "Minucias"],
+  ["Memento", "Recuerdo"],
+  ["Mischief", "Travesura"],
+  ["Monsoon", "Monzón"],
+  ["Martyr", "Mártir"],
+  ["Misfit", "Desajustado"],
+  ["Militant", "Militante"],
+  ["Muse", "Musa"],
+  ["Monarch", "Monarca"],
+  ["Mundane", "Mundano"],
+  ["Mystique", "Misticismo"],
+  ["Meticulous", "Meticuloso"],
+  ["Momentum", "Impulso"],
+  ["Mortuary", "Mortuorio"],
+  ["Malware", "Malware"],
+  ["Microphone", "Micrófono"],
+  ["Multilingual", "Multilingüe"],
+  ["Mainstream", "Convencional"],
+  ["Misogyny", "Misoginia"],
+  ["Mobilization", "Movilización"],
+  ["Multiplex", "Multiplex"],
+  ["Monitor", "Monitor"],
+  ["Myopathy", "Miopatía"],
+  ["Matrix", "Matriz"],
+  ["Moratorium", "Moratoria"],
+  ["Medicinal", "Medicinal"],
+  ["Monument", "Monumento"],
+  ["Morphed", "Transformado"],
+  ["Mournful", "Lloroso"],
+  ["Magnetism", "Magnetismo"],
+  ["Metropolis", "Metrópoli"],
+  ["Motorway", "Autopista"],
+  ["Martinet", "Severidad"],
+  ["Magnification", "Aumento"],
+  ["Morose", "Moroso"],
+  ["Moth", "Polilla"],
+  ["Monochrome", "Monocromo"],
+  ["Manner", "Manera"],
+  ["Marine", "Marino"],
+  ["Malignant", "Maligno"],
+  ["Mosaic", "Mosaico"],
+  ["Morbidity", "Morbilidad"],
+  ["Mortician", "Funerario"],
+  ["Muzzle", "Boca de fuego"],
+  ["Muscle", "Músculo"],
+  ["Musty", "Mohoso"],
+  ["Maximum", "Máximo"],
+  ["Miniscule", "Mínimo"],
+  ["Manifest", "Manifiesto"],
+  ["Miasma", "Miasma"],
+  ["Microbial", "Microbiano"],
+  ["Modal", "Modal"],
+  ["Manipulative", "Manipulador"],
+  ["Melodrama", "Melodrama"],
+  ["Milieu", "Medio"],
+  ["Macro", "Macro"],
+  ["Mummify", "Momificar"],
+  ["Multiplier", "Multiplicador"],
+  ["Monastic", "Monástico"],
+  ["Monotone", "Monótono"],
+  ["Monstrous", "Monstruoso"],
+  ["Mischievous", "Travieso"],
+  ["Medley", "Medley"],
+  ["Malice", "Malicia"],
+  ["Mechanic", "Mecánico"],
+  ["Mechanism", "Mecanismo"],
+  ["Meritorious", "Meritorio"],
+  ["Module", "Módulo"],
+  ["Magnetize", "Magnetizar"],
+  ["Manifestation", "Manifestación"],
+  ["Misalignment", "Desalineación"],
+  ["Mortise", "Mortaja"],
+  ["Microscopic", "MicroscópicoMachine"],
+  ["Microscopic", "Microscópico"],
+  ["Manipulation", "Manipulación"],
+  ["Materialize", "Materializar"],
+  ["Marker", "Marcador"],
+  ["Melody", "Melodía"],
+  ["Mortify", "Mortificar"],
+  ["Mathematic", "Matemático"],
+  ["Mock", "Burlar"],
+  ["Menagerie", "Menagerie"],
+  ["Marvel", "Maravilla"],
+  ["Marshmallow", "Malvavisco"],
+  ["Metaphysical", "Metafísico"],
+  ["Mercenary", "Mercenario"],
+  ["Migratory", "Migratorio"],
+  ["Manuscript", "Manuscrito"],
+  ["Melancholy", "Melancolía"],
+  ["Mandate", "Mandato"],
+  ["Magician", "Mago"],
+  ["Mingle", "Mezclar"],
+  ["Mentor", "Mentor"],
+  ["Modulation", "Modulación"],
+  ["Mural", "Mural"],
+  ["Mineral", "Mineral"],
+  ["Mellow", "Suave"],
+  ["Mislead", "Engañar"],
+  ["Mental", "Mental"],
+  ["Mummification", "Momificación"],
+  ["Mob", "Multitud"],
+  ["Motorist", "Automovilista"],
+  ["Massacre", "Masacre"],
+  ["Miscommunication", "Malentendido"],
+  ["Menial", "Servil"],
+  ["Methodical", "Metódico"],
+  ["Moist", "Húmedo"],
+  ["Modeler", "Modelador"],
+  ["Martyrdom", "Martirio"],
+  ["Medication", "Medicamento"],
+  ["Maturity", "Madurez"],
+  ["Minutia", "Minucia"],
+  ["Medical", "Médico"],
+  ["Mainstream", "Corriente principal"],
+  ["Minimum", "Mínimo"],
+  ["Multi-tasking", "Multitarea"],
+  ["Mandolin", "Mandolina"],
+  ["Misplaced", "Desubicado"],
+  ["Memorandum", "Memorándum"],
+  ["Migration", "Migración"],
+  ["Monumental", "Monumental"],
+  ["Microbe", "Microbio"],
+  ["Martian", "Marciano"],
+  ["Mutation", "Mutación"],
+  ["Mannerism", "Manierismo"],
+  ["Modest", "Modesto"],
+  ["Misfortune", "Desgracia"],
+  ["Misinterpret", "Malinterpretar"],
+  ["Meddle", "Interferir"],
+  ["Mouthful", "Bocado"],
+  ["Matriculate", "Matricular"],
+  ["Multinational", "Multinacional"],
+  ["Mediation", "Mediación"],
+  ["Marquee", "Carpa"],
+  ["Moonlight", "Luz de luna"],
+  ["Mystification", "Misticismo"],
+  ["Mischievousness", "Travesura"],
+  ["Mountaineer", "Montañista"],
+  ["Mediocrity", "Mediocridad"],
+  ["Meek", "Humilde"],
+  ["Mystery", "Misterio"],
+  ["Muscular", "Muscular"],
+  ["Mistrust", "Desconfianza"],
+  ["Malign", "Malignar"],
+  ["Marshy", "Pantanoso"],
+  ["Mystic", "Místico"],
+  ["Minister", "Ministro"],
+  ["Manifest", "Manifestar"],
+  ["Mouthpiece", "Porta voz"],
+  ["Mutate", "Mutar"],
+  ["Mailbox", "Buzón"],
+  ["Mobilize", "Movilizar"],
+  ["Marinate", "Marinar"],
+  ["Mindset", "Mentalidad"],
+  ["Mastery", "Maestría"],
+  ["Minstrelsy", "Juglaría"],
+  ["Mortification", "Mortificación"],
+  ["Machinery", "Maquinaria"],
+  ["Myopic", "Miopía"],
+  ["Mildew", "Moho"],
+  ["Monopolize", "Monopolizar"],
+  ["Manifesto", "Manifiesto"],
+  ["Misogynistic", "Misógino"],
+  ["Muddle", "Confundir"],
+  ["Mineralogy", "Mineralogía"],
+  ["Midday", "Mediodía"],
+  ["Marketable", "Comercializable"],
+  ["Melodramatic", "Melodramático"],
+  ["Multipurpose", "Multipropósito"],
+  ["Malpractice", "Negligencia"],
+  ["Mitigate", "Mitigar"],
+  ["Mutual", "Mutuo"],
+  ["Muffle", "Amortiguar"],
+  ["Machination", "Maquinación"],
+  ["Macabre", "Macabro"],
+  ["Meander", "Deambular"],
+  ["Murmur", "Murmurar"],
+  ["Midst", "En medio"],
+  ["Mold", "Molde"],
+  ["Monastery", "Monasterio"],
+  ["Marrow", "Médula"],
+  ["Meltdown", "Colapso"],
+  ["Misguided", "Mal guiado"],
+  ["Magnetosphere", "Magnetosfera"],
+  ["Minigame", "Minijuego"],
+  ["Moisten", "Humedecer"],
+  ["Modular", "Modular"],
+  ["Milky", "Lechoso"],
+  ["Malevolent", "Malévolo"],
+  ["Mismanage", "Mal administrar"],
+  ["Moralistic", "Moralista"],
+  ["Morbidly", "Morbosamente"],
+  ["Mannerisms", "Manierismos"],
+  ["Misanthrope", "Misántropo"],
+  ["Metaphorical", "Metafórico"],
+  ["Maximize", "Maximizar"],
+  ["Misty", "Brumoso"],
+  ["Marksmanship", "Tiro con precisión"],
+  ["Miscellaneous", "Varios"],
+  ["Monochromatic", "Monocromático"],
+  ["Mysteriously", "Misteriosamente"],
+  ["Malefactor", "Malhechor"],
+  ["Modicum", "Mínimo"],
+  ["Moan", "Gemir"],
+  ["Multitasking", "Multitarea"],
+  ["Macaroni", "Macarrones"],
+  ["Maritime", "Marítimo"],
+  ["Manipulator", "Manipulador"],
+  ["Moisturize", "Hidratante"],
+  ["Macroeconomic", "Macroeconómico"],
+  ["Metaphysics", "Metafísica"],
+  ["Mitigation", "Mitigación"],
+  ["Medley", "Mezcla"],
+  ["Microcosm", "Microcosmos"],
+  ["Malodorous", "Maloliente"],
+  ["Malnutrition", "Desnutrición"],
+  ["Mindfulness", "Atención plena"],
+  ["Magniloquent", "Magnífico"],
+  ["Misinterpretation", "Malinterpretación"],
+  ["Motivational", "Motivacional"],
+  ["Monopolistic", "Monopolista"],
+  ["Messiness", "Desorden"],
+  ["Mannerly", "Cortés"],
+  ["Mouthwatering", "Apetitoso"],
+  ["Miraculous", "Milagroso"],
+  ["Melodious", "Melodioso"],
+  ["Mechanization", "Mecanización"],
+  ["Multi-faceted", "Multifacético"],
+  ["Meta-analysis", "Meta-análisis"],
+  ["Mechanical", "Mecánico"],
+  ["Machiavellian", "Maquiavélico"],
+  ["Milking", "Ordeñando"],
+  ["Miscellany", "Miscelánea"],
+  ["Montane", "Montano"],
+  ["Marathon", "Maratón"],
+  ["Mandrake", "Mandrágora"],
+  ["Mollusk", "Molusco"],
+  ["Mosaics", "Mosaicos"],
+  ["Memento Mori", "Recuerdo de la muerte"],
+  ["Manage", "Gestionar"],
+  ["Majority", "Mayoría"],
+  ["Magazine", "Revista"],
+  ["Marriage", "Matrimonio"],
+  ["Measurement", "Medición"],
+  ["Military", "Militar"],
+  ["Mediate", "Mediar"],
+  ["Modulate", "Modular"],
+  ["Maintain", "Mantener"],
+  ["Morph", "Morfar"],
+  ["Minuscule", "Minúsculo"],
+  ["Misplace", "Desubicarse"],
+  ["Monetary", "Monetario"],
+  ["Mirroring", "Espejear"],
+  ["Meditation", "Meditación"],
+  ["Masquerade", "Mascarada"],
+  ["Mistreatment", "Maltrato"],
+  ["Methodology", "Metodología"],
+  ["Misdemeanor", "Delito menor"],
+  ["Masculine", "Masculino"],
+  ["Morsel", "Bocado"],
+  ["Microorganism", "Microorganismo"],
+  ["Meteor", "Meteoro"],
+  ["Militarism", "Militarismo"],
+  ["Masticate", "Masticar"],
+  ["Motive", "Motivo"],
+  ["Mutilate", "Mutilar"],
+  ["Mushroom", "Champiñón"],
+  ["Meteorite", "Meteorito"],
+  ["Multi-layered", "Multicapa"],
+  ["Masochism", "Masoquismo"],
+  ["Misappropriation", "Apropiación indebida"],
+  ["Middleman", "Intermediario"],
+  ["Miscalculation", "Cálculo erróneo"],
+  ["Mirth", "Alegría"],
+  ["Mockery", "Burla"],
+  ["Memoization", "Memorización"],
+  ["Millennia", "Milenios"],
+  ["Meteorological", "Meteorológico"],
+  ["Marketability", "Comercialización"],
+  ["Multifaceted", "Multifacético"],
+  ["Mothership", "Nave nodriza"],
+  ["Mettle", "Valor"],
+  ["Manifold", "Múltiple"],
+  ["Maliciously", "Maliciosamente"],
+  ["Microchip", "Microchip"],
+  ["Minivan", "Minivan"],
+  ["Marketed", "Comercializado"],
+  ["Medallion", "Medallón"],
+  ["Mortgage", "Hipoteca"],
+  ["Myopia", "Miopía"],
+  ["Materialism", "Materialismo"],
+  ["Mirthful", "Alegre"],
+  ["Methodism", "Metodismo"],
+  ["Moron", "Idiota"],
+  ["Missive", "Mensaje"],
+  ["Mirrored", "Espejado"],
+  ["Malcontent", "Descontento"],
+  ["Minstrel", "Juglar"],
+  ["Morbidness", "Morbosidad"],
+  ["Macroeconomics", "Macroeconomía"],
+  ["Melancholic", "Melancólico"],
+  ["Mumble", "Murmurar"],
+  ["Magnanimously", "Magnánimamente"],
+  ["Meditative", "Meditativo"],
+  ["Mechanically", "Mecánicamente"]
+];
+
+
+/////////////////
+    const display = document.getElementById('wordDisplay');
+    const controls = document.getElementById('controls');
+    const prevBtn = document.getElementById('prevBtn');
+    const pauseResumeBtn = document.getElementById('pauseResumeBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const wordList = document.getElementById('wordList');
+
+    let index = 0;
+    let started = false;
+    let stopRequested = false;
+    let skipRequested = false;
+    let pauseRequested = false;
+    let jumpToIndex = false;
+
+    // Populate sidebar list
+    words.forEach(([en, pt], i) => {
+      const li = document.createElement('li');
+          li.classList.add('list-group-item');
+      li.textContent = `${en} - ${pt}`;
+      li.dataset.idx = i;
+      li.addEventListener('click', () => {
+        index = i;
+        if (started) {
+          jumpToIndex = true;
+          speechSynthesis.cancel();
+        } else {
+          updateDisplayAndHighlight();
+        }
+      });
+      wordList.appendChild(li);
+    });
+
+    function updateDisplayAndHighlight() {
+      const [en, pt] = words[index];
+      display.textContent = `${en} - ${pt}`;
+
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+      const activeLi = wordList.querySelector(`li[data-idx="${index}"]`);
+      if (activeLi) {
+        activeLi.classList.add('active');
+        activeLi.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function speakWord(text, lang) {
+      return new Promise(resolve => {
+        if (stopRequested || skipRequested || jumpToIndex) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.onend = () => resolve();
+        utterance.onerror = () => resolve();
+        speechSynthesis.speak(utterance);
+      });
+    }
+
+    async function waitWithPause(ms) {
+      const interval = 100;
+      let waited = 0;
+      while (waited < ms) {
+        if (stopRequested || skipRequested || jumpToIndex) break;
+        if (!pauseRequested) {
+          waited += interval;
+        }
+        await new Promise(r => setTimeout(r, interval));
+      }
+    }
+
+    async function playLoop() {
+      while (!stopRequested) {
+        if (pauseRequested) {
+          await new Promise(r => setTimeout(r, 200));
+          continue;
+        }
+
+        
+
+        updateDisplayAndHighlight();
+        const [english, portuguese] = words[index];
+
+        await speakWord(english, 'en-US');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        await speakWord(portuguese, 'pt-BR');
+        if (stopRequested || skipRequested || jumpToIndex) {
+          if (skipRequested) {
+            index = (index + 1) % words.length;
+            skipRequested = false;
+          }
+          if (jumpToIndex) {
+            jumpToIndex = false;
+          }
+          continue;
+        }
+
+        index = (index + 1) % words.length;
+        await waitWithPause(1000);
+      }
+
+      stopRequested = false;
+      pauseRequested = false;
+      skipRequested = false;
+      jumpToIndex = false;
+      started = false;
+      speechSynthesis.cancel();
+      display.textContent = "▶ Click to Start";
+      controls.style.display = "none";
+      pauseResumeBtn.textContent = "Pause";
+      Array.from(wordList.children).forEach(li => li.classList.remove('active'));
+    }
+
+    display.addEventListener('click', () => {
+      if (!started) {
+        started = true;
+        stopRequested = false;
+        skipRequested = false;
+        pauseRequested = false;
+        index = 0;
+        display.textContent = "Loading...";
+        controls.style.display = "flex";
+        pauseResumeBtn.textContent = "Pause";
+        setTimeout(() => {
+          playLoop();
+        }, 500);
+      }
+    });
+
+    stopBtn.addEventListener('click', () => {
+      stopRequested = true;
+      speechSynthesis.cancel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        speechSynthesis.cancel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (started) {
+        skipRequested = true;
+        index = (index - 1 + words.length) % words.length;
+        speechSynthesis.cancel();
+      }
+    });
+
+    pauseResumeBtn.addEventListener('click', () => {
+      if (!started) return;
+      if (!pauseRequested) {
+        pauseRequested = true;
+        speechSynthesis.pause();
+        pauseResumeBtn.textContent = "Resume";
+      } else {
+        pauseRequested = false;
+        speechSynthesis.resume();
+        pauseResumeBtn.textContent = "Pause";
+      }
+    });
+  </script>
+  <!-- Bootstrap 5 JS + Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
